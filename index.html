@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antara &amp; Sagarmoy — Asirbad &amp; Engagement Invitation</title>
+
+  <!-- Google Fonts: Pinyon Script (Calligraphy with classic uppercase A), Cormorant Garamond (Serif), Cinzel (Tracked Uppercase) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            burgundy: {
+              deep: '#230408',
+              dark: '#3b080e',
+              royal: '#4a0e17',
+              rich: '#5b121b',
+              ink: '#3f0c13',
+            },
+            gold: {
+              antique: '#c59b4b',
+              warm: '#d8b56c',
+              deep: '#a67c37',
+              hairline: '#e3cfa6',
+            },
+            ivory: {
+              base: '#fdfaf5',
+              band: '#f6efe6',
+              card: '#fffdf9',
+            },
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Cinzel"', 'Georgia', 'serif'],
+            script: ['"Pinyon Script"', 'cursive'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* ==========================================================================
+       Base Layout & Typography Smoothness
+       ========================================================================== */
+    html {
+      scroll-behavior: smooth;
+      background-color: #230408;
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Ensure calligraphic names preserve crisp uppercase lettering (e.g., capital "A" in Antara) */
+    .font-script {
+      text-transform: none;
+      font-feature-settings: 'liga' 1, 'kern' 1;
+    }
+
+    body.invitation-open {
+      background-color: #fdfaf5;
+    }
+
+    /* ==========================================================================
+       VIEW 1: Deep Royal Burgundy Landing Backdrop
+       ========================================================================== */
+    .landing-backdrop {
+      background: radial-gradient(
+        ellipse at 50% 46%,
+        #4a0e17 0%,
+        #3b080e 42%,
+        #2b050a 76%,
+        #230408 100%
+      );
+      transition:
+        opacity 0.95s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 1.1s cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 0.95s ease;
+    }
+
+    .landing-backdrop.is-hidden {
+      opacity: 0;
+      transform: scale(1.03);
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* Luminous Champagne Gold Glow for Landing Calligraphy */
+    .gold-glow-text {
+      color: #f0d797;
+      text-shadow:
+        0 0 18px rgba(216, 181, 108, 0.36),
+        0 0 38px rgba(197, 155, 75, 0.22),
+        0 2px 6px rgba(0, 0, 0, 0.48);
+    }
+
+    /* Gentle ambient botanical sway */
+    @keyframes subtleSway {
+      0%, 100% {
+        transform: rotate(0deg) translateY(0px);
+      }
+      50% {
+        transform: rotate(1.3deg) translateY(-4px);
+      }
+    }
+
+    .botanical-sway {
+      animation: subtleSway 8.5s ease-in-out infinite;
+      transform-origin: top left;
+    }
+
+    .botanical-sway-reverse {
+      animation: subtleSway 9.5s ease-in-out infinite reverse;
+      transform-origin: bottom right;
+    }
+
+    /* ==========================================================================
+       Interactive Wax-Sealed Envelope
+       ========================================================================== */
+    .envelope-stage {
+      perspective: 1200px;
+    }
+
+    .envelope-wrapper {
+      position: relative;
+      width: min(82vw, 310px);
+      aspect-ratio: 1.48 / 1;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition:
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.55s ease;
+      filter: drop-shadow(0 20px 34px rgba(0, 0, 0, 0.56));
+    }
+
+    .envelope-wrapper:hover {
+      transform: translateY(-4px) scale(1.015);
+      filter: drop-shadow(0 26px 42px rgba(0, 0, 0, 0.66));
+    }
+
+    /* Subtle cream textured paper */
+    .envelope-body {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 3px;
+      background-color: #f5ecdc;
+      background-image:
+        radial-gradient(rgba(166, 124, 55, 0.08) 1px, transparent 0),
+        linear-gradient(135deg, #fdf8ee 0%, #f2e6cf 55%, #e8d8bc 100%);
+      background-size: 14px 14px, 100% 100%;
+      overflow: hidden;
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.58),
+        inset 0 -10px 24px rgba(130, 100, 60, 0.14);
+    }
+
+    .envelope-fold-bottom {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(166, 124, 55, 0.12) 0%, rgba(255, 252, 245, 0.35) 100%);
+      clip-path: polygon(0 100%, 50% 48%, 100% 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .envelope-fold-left {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(150, 115, 72, 0.12) 0%, rgba(255, 252, 245, 0.05) 100%);
+      clip-path: polygon(0 0, 50% 52%, 0 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .envelope-fold-right {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(270deg, rgba(150, 115, 72, 0.14) 0%, rgba(255, 252, 245, 0.05) 100%);
+      clip-path: polygon(100% 0, 50% 52%, 100% 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Diagonal Deep Burgundy Satin Ribbon */
+    .satin-ribbon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 155%;
+      height: 22px;
+      transform: translate(-50%, -50%) rotate(-34deg);
+      background: linear-gradient(
+        180deg,
+        #3b080e 0%,
+        #68141f 28%,
+        #821c29 48%,
+        #4a0e17 78%,
+        #2b0509 100%
+      );
+      box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.38),
+        inset 0 1px 1px rgba(255, 215, 215, 0.24);
+      z-index: 4;
+      transition: opacity 0.55s ease, transform 0.65s ease;
+    }
+
+    /* Top Triangular Flap (3D hinged) */
+    .envelope-flap-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 58%;
+      transform-origin: top center;
+      transform-style: preserve-3d;
+      z-index: 3;
+      transition: transform 0.85s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+    }
+
+    .envelope-flap {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #fcf8ee 0%, #efe3cc 75%, #e4d2b3 100%);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      filter: drop-shadow(0 3px 4px rgba(80, 55, 30, 0.22));
+    }
+
+    /* Breathing Burgundy Wax Seal */
+    @keyframes sealBreathe {
+      0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow:
+          0 6px 14px rgba(0, 0, 0, 0.45),
+          0 0 14px rgba(197, 155, 75, 0.16),
+          inset 0 2px 5px rgba(255, 195, 195, 0.26),
+          inset 0 -4px 8px rgba(25, 2, 4, 0.65);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.048);
+        box-shadow:
+          0 8px 18px rgba(0, 0, 0, 0.5),
+          0 0 24px rgba(216, 181, 108, 0.35),
+          inset 0 2px 5px rgba(255, 195, 195, 0.3),
+          inset 0 -4px 8px rgba(25, 2, 4, 0.65);
+      }
+    }
+
+    .wax-seal {
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      width: 66px;
+      height: 66px;
+      border-radius: 50% 48% 52% 49% / 49% 52% 48% 51%;
+      background: radial-gradient(
+        circle at 35% 30%,
+        #841b26 0%,
+        #5b121b 42%,
+        #410910 78%,
+        #290408 100%
+      );
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: sealBreathe 3.4s ease-in-out infinite;
+      transition:
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.55s ease;
+    }
+
+    .wax-seal::before {
+      content: '';
+      position: absolute;
+      inset: 5px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(216, 181, 108, 0.34);
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.45);
+      pointer-events: none;
+    }
+
+    .envelope-shimmer {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        115deg,
+        transparent 30%,
+        rgba(255, 248, 225, 0.32) 48%,
+        transparent 66%
+      );
+      transform: translateX(-120%);
+      z-index: 5;
+      pointer-events: none;
+      transition: transform 0.85s ease;
+    }
+
+    .envelope-wrapper:hover .envelope-shimmer {
+      transform: translateX(120%);
+    }
+
+    /* Envelope Opening State */
+    .envelope-wrapper.is-opening .wax-seal {
+      animation: none;
+      opacity: 0;
+      transform: translate(-50%, -68%) scale(1.18);
+    }
+
+    .envelope-wrapper.is-opening .satin-ribbon {
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(-34deg) scaleX(1.06);
+    }
+
+    .envelope-wrapper.is-opening .envelope-flap-container {
+      transform: rotateX(-165deg);
+    }
+
+    .envelope-wrapper.is-opening {
+      transform: translateY(10px) scale(1.06);
+    }
+
+    /* ==========================================================================
+       VIEW 2: Ivory Invitation, Frames & Downward Cascade Animations
+       ========================================================================== */
+    .invitation-view {
+      background-color: #fdfaf5;
+      opacity: 0;
+      transition: opacity 0.9s ease;
+    }
+
+    .invitation-view.is-visible {
+      opacity: 1;
+    }
+
+    /* Hero downward cascade items (start slightly above and glide gently down) */
+    .cascade-item {
+      opacity: 0;
+      transform: translateY(-14px);
+      transition:
+        opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .cascade-item.cascade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Scroll-triggered cascade items for lower sections */
+    .scroll-cascade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .scroll-cascade.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Delicate Date Box with Gold L-Shaped Corner Brackets */
+    .date-frame {
+      position: relative;
+      border: 1px solid rgba(197, 155, 75, 0.32);
+      background: rgba(255, 253, 249, 0.88);
+    }
+
+    .date-frame::before,
+    .date-frame::after {
+      content: '';
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      pointer-events: none;
+    }
+
+    .date-frame::before {
+      top: -1px;
+      left: -1px;
+      border-top: 1.5px solid #c59b4b;
+      border-left: 1.5px solid #c59b4b;
+    }
+
+    .date-frame::after {
+      bottom: -1px;
+      right: -1px;
+      border-bottom: 1.5px solid #c59b4b;
+      border-right: 1.5px solid #c59b4b;
+    }
+
+    /* L-Shaped Gold Corner Brackets for Couple Hero Portrait */
+    .corner-bracket-frame {
+      position: relative;
+      padding: 12px;
+    }
+
+    .bracket {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      pointer-events: none;
+    }
+
+    .bracket-tl {
+      top: 0;
+      left: 0;
+      border-top: 1.5px solid #c59b4b;
+      border-left: 1.5px solid #c59b4b;
+    }
+
+    .bracket-tr {
+      top: 0;
+      right: 0;
+      border-top: 1.5px solid #c59b4b;
+      border-right: 1.5px solid #c59b4b;
+    }
+
+    .bracket-bl {
+      bottom: 0;
+      left: 0;
+      border-bottom: 1.5px solid #c59b4b;
+      border-left: 1.5px solid #c59b4b;
+    }
+
+    .bracket-br {
+      bottom: 0;
+      right: 0;
+      border-bottom: 1.5px solid #c59b4b;
+      border-right: 1.5px solid #c59b4b;
+    }
+
+    /* Double Gold-Bordered Vertical Portrait Frame (The Couple Section) */
+    .double-gold-frame {
+      padding: 5px;
+      border: 1.25px solid #c59b4b;
+      background: #fffdf9;
+      box-shadow: 0 10px 28px rgba(74, 14, 23, 0.06);
+    }
+
+    .double-gold-frame-inner {
+      border: 1px solid rgba(197, 155, 75, 0.55);
+      overflow: hidden;
+    }
+
+    /* Subtle Page Corner Hairlines */
+    .page-corner-tl {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      width: 52px;
+      height: 52px;
+      border-top: 1px solid rgba(197, 155, 75, 0.28);
+      border-left: 1px solid rgba(197, 155, 75, 0.28);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* Luxury Form Controls */
+    .luxury-input {
+      background-color: #fdfaf5;
+      border: 1px solid rgba(197, 155, 75, 0.42);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .luxury-input:focus {
+      outline: none;
+      border-color: #5b121b;
+      box-shadow: 0 0 0 3px rgba(91, 18, 27, 0.08);
+    }
+
+    /* Floating Sound Pill Animation */
+    @keyframes soundPulse {
+      0%, 100% {
+        transform: scaleY(0.45);
+      }
+      50% {
+        transform: scaleY(1);
+      }
+    }
+
+    .sound-bar {
+      width: 2px;
+      height: 11px;
+      background-color: #d8b56c;
+      border-radius: 1px;
+      transform-origin: bottom;
+      transition: transform 0.25s ease;
+    }
+
+    .sound-playing .sound-bar-1 {
+      animation: soundPulse 0.9s ease-in-out infinite;
+    }
+    .sound-playing .sound-bar-2 {
+      animation: soundPulse 0.7s ease-in-out 0.2s infinite;
+    }
+    .sound-playing .sound-bar-3 {
+      animation: soundPulse 1.05s ease-in-out 0.35s infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .botanical-sway,
+      .botanical-sway-reverse,
+      .wax-seal,
+      .sound-bar {
+        animation: none !important;
+      }
+      .cascade-item,
+      .scroll-cascade {
+        transition-duration: 0.2s !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="selection:bg-gold-warm/30 selection:text-burgundy-rich">
+
+  <!-- ========================================================================
+       CUSTOM BACKGROUND MUSIC (MP3)
+       Drop your .mp3 file in the same folder as index.html and name it
+       "music.mp3" (or update the src attribute below to match your filename).
+       If music.mp3 is not present, the site gracefully falls back to a gentle
+       Web Audio ambient harp melody.
+       ======================================================================== -->
+  <audio id="bg-music" src="./music.mp3" loop preload="auto"></audio>
+
+  <!-- ========================================================================
+       FLOATING SOUND TOGGLE (BOTTOM-RIGHT)
+       Controls custom music.mp3 (with smooth fade-in) or Web Audio fallback
+       ======================================================================== -->
+  <button
+    id="sound-toggle-btn"
+    type="button"
+    aria-pressed="false"
+    aria-label="Toggle gentle background music"
+    class="fixed bottom-5 right-5 z-[60] flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-burgundy-royal/95 text-gold-warm border border-gold-antique/45 shadow-[0_6px_22px_rgba(35,4,8,0.35)] hover:bg-burgundy-rich transition-all cursor-pointer backdrop-blur-sm"
+  >
+    <span class="flex items-end gap-[2.5px] h-3" aria-hidden="true">
+      <span class="sound-bar sound-bar-1 scale-y-50"></span>
+      <span class="sound-bar sound-bar-2 scale-y-75"></span>
+      <span class="sound-bar sound-bar-3 scale-y-50"></span>
+    </span>
+    <span id="sound-toggle-label" class="font-display text-[10px] tracking-[0.2em] uppercase">
+      Sound Off
+    </span>
+  </button>
+
+  <!-- ========================================================================
+       VIEW 1: FULL-SCREEN ROYAL BURGUNDY LANDING SCREEN
+       ======================================================================== -->
+  <section
+    id="landing-view"
+    role="button"
+    tabindex="0"
+    aria-label="Tap the wax seal to open Antara and Sagarmoy's Asirbad and Engagement invitation"
+    class="landing-backdrop fixed inset-0 z-50 flex flex-col items-center justify-center px-6 py-10 text-center overflow-hidden cursor-pointer select-none"
+  >
+    <!-- Top-Left Antique Gold Botanical Leaf Illustration -->
+    <svg
+      class="botanical-sway pointer-events-none absolute -top-2 -left-2 w-28 sm:w-40 md:w-48 opacity-65"
+      viewBox="0 0 180 260"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path d="M82 248C78 195 62 152 46 112C35 84 31 54 34 22" stroke="#c59b4b" stroke-width="1.15" stroke-linecap="round" />
+      <path d="M34 22C24 38 22 56 33 70C44 56 45 38 34 22Z" stroke="#c59b4b" stroke-width="1.05" />
+      <path d="M34 24L33 68" stroke="#c59b4b" stroke-width="0.7" opacity="0.7" />
+      <path d="M38 92C18 84 8 68 6 52C22 56 34 70 38 92Z" stroke="#c59b4b" stroke-width="1.05" />
+      <path d="M9 55L36 89" stroke="#c59b4b" stroke-width="0.7" opacity="0.7" />
+      <path d="M44 102C60 88 70 72 72 54C56 60 46 78 44 102Z" stroke="#c59b4b" stroke-width="1.05" />
+      <path d="M70 58L46 98" stroke="#c59b4b" stroke-width="0.7" opacity="0.7" />
+      <path d="M55 144C32 138 18 124 12 108C30 112 46 124 55 144Z" stroke="#c59b4b" stroke-width="1.05" />
+      <path d="M16 112L52 141" stroke="#c59b4b" stroke-width="0.7" opacity="0.7" />
+      <path d="M61 154C78 136 90 116 92 94C74 104 63 126 61 154Z" stroke="#c59b4b" stroke-width="1.05" />
+      <path d="M89 99L63 150" stroke="#c59b4b" stroke-width="0.7" opacity="0.7" />
+      <path d="M72 192C54 188 42 178 36 164C50 166 64 176 72 192Z" stroke="#c59b4b" stroke-width="1.05" />
+      <path d="M40 168L69 190" stroke="#c59b4b" stroke-width="0.7" opacity="0.7" />
+    </svg>
+
+    <!-- Bottom-Right Antique Gold Botanical Leaf Illustration -->
+    <svg
+      class="botanical-sway-reverse pointer-events-none absolute -bottom-2 -right-2 w-28 sm:w-40 md:w-48 opacity-65 rotate-180"
+      viewBox="0 0 180 260"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path d="M82 248C78 195 62 152 46 112C35 84 31 54 34 22" stroke="#c59b4b" stroke-width="1.15" stroke-linecap="round" />
+      <path d="M34 22C24 38 22 56 33 70C44 56 45 38 34 22Z" stroke="#c59b4b" stroke-width="1.05" />
+      <path d="M34 24L33 68" stroke="#c59b4b" stroke-width="0.7" opacity="0.7" />
+      <path d="M38 92C18 84 8 68 6 52C22 56 34 70 38 92Z" stroke="#c59b4b" stroke-width="1.05" />
+      <path d="M9 55L36 89" stroke="#c59b4b" stroke-width="0.7" opacity="0.7" />
+      <path d="M44 102C60 88 70 72 72 54C56 60 46 78 44 102Z" stroke="#c59b4b" stroke-width="1.05" />
+      <path d="M70 58L46 98" stroke="#c59b4b" stroke-width="0.7" opacity="0.7" />
+      <path d="M55 144C32 138 18 124 12 108C30 112 46 124 55 144Z" stroke="#c59b4b" stroke-width="1.05" />
+      <path d="M16 112L52 141" stroke="#c59b4b" stroke-width="0.7" opacity="0.7" />
+      <path d="M61 154C78 136 90 116 92 94C74 104 63 126 61 154Z" stroke="#c59b4b" stroke-width="1.05" />
+      <path d="M89 99L63 150" stroke="#c59b4b" stroke-width="0.7" opacity="0.7" />
+      <path d="M72 192C54 188 42 178 36 164C50 166 64 176 72 192Z" stroke="#c59b4b" stroke-width="1.05" />
+      <path d="M40 168L69 190" stroke="#c59b4b" stroke-width="0.7" opacity="0.7" />
+    </svg>
+
+    <!-- Centered Landing Stack -->
+    <div class="relative z-10 flex flex-col items-center max-w-xl w-full">
+      <p class="font-display text-[10px] sm:text-xs tracking-[0.34em] uppercase text-gold-warm/85 mb-4 sm:mb-5">
+        Two Hearts, One Forever
+      </p>
+
+      <p class="font-serif italic text-base sm:text-lg md:text-[19px] leading-relaxed text-ivory-base/85 mb-3 sm:mb-4 px-2">
+        A beautiful journey begins with love,<br />
+        laughter, and a lifetime of togetherness.
+      </p>
+
+      <h1 class="font-script gold-glow-text text-5xl sm:text-6xl md:text-7xl tracking-wide mb-8 sm:mb-10 leading-tight">
+        Antara <span class="text-4xl sm:text-5xl md:text-6xl mx-0.5">&amp;</span> Sagarmoy
+      </h1>
+
+      <!-- Interactive Cream Envelope with Satin Ribbon & Embossed Rose Wax Seal -->
+      <div class="envelope-stage my-2">
+        <div id="envelope" class="envelope-wrapper" aria-hidden="true">
+          <div class="envelope-body">
+            <div class="envelope-fold-left"></div>
+            <div class="envelope-fold-right"></div>
+            <div class="envelope-fold-bottom"></div>
+            <div class="satin-ribbon"></div>
+            <div class="envelope-shimmer"></div>
+          </div>
+
+          <div class="envelope-flap-container">
+            <div class="envelope-flap"></div>
+          </div>
+
+          <div class="wax-seal">
+            <svg
+              class="w-9 h-9 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 14C26 14 22 18.5 22 23.5C22 28.5 26.5 32 32 32C37.5 32 42 28.5 42 23.5C42 18.5 38 14 32 14Z"
+                stroke="#d8b56c"
+                stroke-width="1.6"
+                fill="rgba(197, 155, 75, 0.22)"
+              />
+              <path
+                d="M32 18C28.8 18 26.5 20.2 26.5 23C26.5 25.8 29 27.8 32 27.8C35 27.8 37.5 25.8 37.5 23C37.5 20.2 35.2 18 32 18Z"
+                stroke="#f3dc9b"
+                stroke-width="1.4"
+              />
+              <path
+                d="M32 21C30.6 21 29.8 22 30.2 23.2C30.6 24.4 32.8 24.6 33.6 23.4C34.4 22.2 33.4 20.8 31.8 20.8"
+                stroke="#f5e3b0"
+                stroke-width="1.3"
+                stroke-linecap="round"
+              />
+              <path
+                d="M22.5 21C19 23.5 19.5 29.5 24 32.5C26.8 34.3 29.6 34.5 32 33.8C34.4 34.5 37.2 34.3 40 32.5C44.5 29.5 45 23.5 41.5 21"
+                stroke="#d8b56c"
+                stroke-width="1.4"
+                stroke-linecap="round"
+              />
+              <path d="M32 34V50" stroke="#c59b4b" stroke-width="1.6" stroke-linecap="round" />
+              <path
+                d="M32 43C27 42.5 23 39.8 21.5 36.5C25.5 36.5 29.5 38.8 32 43Z"
+                fill="#c59b4b"
+                fill-opacity="0.75"
+                stroke="#f0d797"
+                stroke-width="1"
+              />
+              <path
+                d="M32 45C37 44.5 41 41.8 42.5 38.5C38.5 38.5 34.5 40.8 32 45Z"
+                fill="#c59b4b"
+                fill-opacity="0.75"
+                stroke="#f0d797"
+                stroke-width="1"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <p class="font-serif italic text-base sm:text-lg text-gold-warm/90 mt-8 sm:mt-9 tracking-wide">
+        Tap the seal to open
+      </p>
+
+      <p class="font-display text-[10px] sm:text-[11px] tracking-[0.28em] uppercase text-gold-antique/80 mt-5">
+        December 6, 2026 &nbsp;&middot;&nbsp; Kolkata, India
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       VIEW 2: CASCADING INVITATION & ENGAGEMENT WEBSITE
+       ======================================================================== -->
+  <main
+    id="invitation-view"
+    class="invitation-view hidden min-h-screen w-full text-burgundy-ink relative"
+  >
+    <!-- Subtle Top-Left Gold Corner Hairline -->
+    <div class="page-corner-tl hidden sm:block" aria-hidden="true"></div>
+
+    <!-- ======================================================================
+         SECTION 1: HERO INVITATION CARD + COUPLE PORTRAIT FRAME (#fdfaf5)
+         ====================================================================== -->
+    <section class="bg-ivory-base px-5 pt-14 pb-20 sm:pt-20 sm:pb-24 flex flex-col items-center">
+      <!-- Centered Bordered Ivory Invitation Card -->
+      <div
+        class="relative w-full max-w-lg bg-ivory-card border border-gold-hairline/85 rounded-[2px] shadow-[0_14px_45px_rgba(74,14,23,0.045)] p-2.5 sm:p-3.5"
+      >
+        <!-- Thin Gold Inner Outline -->
+        <div class="relative border border-gold-antique/25 px-6 py-12 sm:px-12 sm:py-14 text-center">
+          <!-- Delicate Gold Corner Accents -->
+          <span class="absolute top-2 left-2 w-3.5 h-3.5 border-t border-l border-gold-antique/55" aria-hidden="true"></span>
+          <span class="absolute top-2 right-2 w-3.5 h-3.5 border-t border-r border-gold-antique/55" aria-hidden="true"></span>
+          <span class="absolute bottom-2 left-2 w-3.5 h-3.5 border-b border-l border-gold-antique/55" aria-hidden="true"></span>
+          <span class="absolute bottom-2 right-2 w-3.5 h-3.5 border-b border-r border-gold-antique/55" aria-hidden="true"></span>
+
+          <!-- 1. Eyebrow -->
+          <p
+            data-cascade-order="1"
+            class="cascade-item font-display text-[10px] sm:text-[11px] tracking-[0.28em] uppercase text-burgundy-rich/90"
+          >
+            Together With Their Families
+          </p>
+
+          <!-- 2. Gold Heart Divider -->
+          <div
+            data-cascade-order="2"
+            class="cascade-item flex items-center justify-center gap-3 my-5 sm:my-6"
+            aria-hidden="true"
+          >
+            <span class="h-px w-10 sm:w-14 bg-gradient-to-r from-transparent to-gold-antique/75"></span>
+            <span class="text-gold-antique text-sm leading-none">&#9829;</span>
+            <span class="h-px w-10 sm:w-14 bg-gradient-to-l from-transparent to-gold-antique/75"></span>
+          </div>
+
+          <!-- 3. Bride Name -->
+          <h2
+            data-cascade-order="3"
+            class="cascade-item font-script text-6xl sm:text-7xl md:text-[5rem] text-burgundy-rich leading-[1.06] font-normal"
+          >
+            Antara
+          </h2>
+
+          <!-- 4. Ampersand -->
+          <p
+            data-cascade-order="4"
+            class="cascade-item font-serif italic text-xl sm:text-2xl text-gold-antique my-0.5 sm:my-1"
+          >
+            &amp;
+          </p>
+
+          <!-- 5. Groom Name -->
+          <h2
+            data-cascade-order="5"
+            class="cascade-item font-script text-6xl sm:text-7xl md:text-[5rem] text-burgundy-rich leading-[1.08] font-normal mb-7 sm:mb-8"
+          >
+            Sagarmoy
+          </h2>
+
+          <!-- 6. Request the Pleasure of Your Company -->
+          <p
+            data-cascade-order="6"
+            class="cascade-item font-display text-[10.5px] sm:text-[12px] tracking-[0.22em] uppercase text-burgundy-ink/85"
+          >
+            Request the Pleasure of Your Company
+          </p>
+
+          <!-- 7. at the celebration of their -->
+          <p
+            data-cascade-order="7"
+            class="cascade-item font-serif italic text-base sm:text-lg text-burgundy-ink/75 mt-2"
+          >
+            at the celebration of their
+          </p>
+
+          <!-- 8. Asirbad and Engagement -->
+          <p
+            data-cascade-order="8"
+            class="cascade-item font-serif text-2xl sm:text-[28px] font-medium tracking-wide text-burgundy-rich mt-1 mb-8 sm:mb-9"
+          >
+            Asirbad and Engagement
+          </p>
+
+          <!-- 9. Date Highlight Box with Gold L-Shaped Corner Brackets -->
+          <div
+            data-cascade-order="9"
+            class="cascade-item date-frame inline-block w-full max-w-sm px-4 py-3.5 sm:px-6 sm:py-4 rounded-[2px]"
+          >
+            <p class="font-display text-[9.5px] sm:text-[11px] tracking-[0.2em] uppercase text-burgundy-rich">
+              Sunday, December 6, 2026 &nbsp;&middot;&nbsp; 12:00 PM Onwards
+            </p>
+          </div>
+
+          <!-- 10. Warm Closing Line -->
+          <p
+            data-cascade-order="10"
+            class="cascade-item font-serif italic text-sm sm:text-base text-burgundy-ink/75 mt-7"
+          >
+            Dear <span class="text-burgundy-rich font-medium not-italic">Guest</span>, your presence would mean the world to us
+          </p>
+        </div>
+      </div>
+
+      <!-- Couple Portrait Frame Directly Below Card (Gold L-Shaped Corner Brackets) -->
+      <div
+        data-cascade-order="11"
+        class="cascade-item w-full max-w-md mt-14 sm:mt-16"
+      >
+        <div class="corner-bracket-frame">
+          <span class="bracket bracket-tl" aria-hidden="true"></span>
+          <span class="bracket bracket-tr" aria-hidden="true"></span>
+          <span class="bracket bracket-bl" aria-hidden="true"></span>
+          <span class="bracket bracket-br" aria-hidden="true"></span>
+
+          <div
+            id="couple-photo-frame"
+            class="relative bg-gradient-to-br from-[#faf3e8] via-[#f4e8d6] to-[#efe0c8] border border-gold-hairline/75 overflow-hidden p-3 sm:p-4 text-center"
+          >
+            <div class="w-full aspect-[4/3] overflow-hidden">
+              <img
+                src="images/couple-potrait.jpeg"
+                alt="Antara and Sagarmoy"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+            <p class="font-script text-3xl sm:text-4xl text-burgundy-rich leading-none mt-3.5 mb-1">
+              Antara &amp; Sagarmoy
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 2: THE COUPLE (WARM BEIGE BAND #f6efe6)
+         ====================================================================== -->
+    <section id="the-couple" class="bg-ivory-band px-5 py-20 sm:py-24 border-y border-gold-hairline/50">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Section Header -->
+        <div class="scroll-cascade">
+          <p class="font-display text-[10px] sm:text-xs tracking-[0.3em] uppercase text-burgundy-rich/85">
+            The Couple
+          </p>
+          <div class="flex items-center justify-center gap-3 my-4" aria-hidden="true">
+            <span class="h-px w-10 sm:w-14 bg-gradient-to-r from-transparent to-gold-antique/75"></span>
+            <span class="text-gold-antique text-sm leading-none">&#9829;</span>
+            <span class="h-px w-10 sm:w-14 bg-gradient-to-l from-transparent to-gold-antique/75"></span>
+          </div>
+          <h3 class="font-serif text-3xl sm:text-4xl md:text-[42px] text-burgundy-rich font-normal tracking-wide mb-14">
+            Two Souls, One Journey
+          </h3>
+        </div>
+
+        <!-- Two-Column Portrait Grid with Vertical Gold Divider & Ampersand -->
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-10 md:gap-8">
+          <!-- Left Column: Antara -->
+          <div class="scroll-cascade flex flex-col items-center">
+            <div class="double-gold-frame w-60 sm:w-64">
+              <div class="double-gold-frame-inner bg-gradient-to-b from-[#faf4ea] to-[#efe3cf] flex flex-col pt-4 px-4 pb-0">
+                <div class="w-full aspect-[3/4] overflow-hidden">
+                  <img
+                    src="images/antara-potrait.jpeg"
+                    alt="Antara"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div class="py-3.5 flex items-center justify-center">
+                  <span class="font-display text-[10px] tracking-[0.26em] uppercase text-gold-deep/85 leading-none">
+                    Bride
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="font-script text-4xl sm:text-[44px] text-burgundy-rich mt-6 leading-tight">
+              Antara
+            </h4>
+            <p class="font-serif italic text-sm sm:text-base text-burgundy-ink/65 mt-1">
+              Daughter of
+            </p>
+            <p class="font-serif text-base sm:text-lg text-burgundy-ink/85">
+              Dipak Maity &amp; Anjana Maity
+            </p>
+          </div>
+
+          <!-- Center Divider: Vertical Gold Line with "&" (Horizontal on Mobile) -->
+          <div class="scroll-cascade flex md:flex-col items-center justify-center gap-4 py-1" aria-hidden="true">
+            <span class="h-px w-16 md:w-px md:h-24 bg-gradient-to-r md:bg-gradient-to-b from-transparent via-gold-antique/70 to-transparent"></span>
+            <span class="font-serif italic text-2xl sm:text-3xl text-gold-antique">&amp;</span>
+            <span class="h-px w-16 md:w-px md:h-24 bg-gradient-to-r md:bg-gradient-to-b from-transparent via-gold-antique/70 to-transparent"></span>
+          </div>
+
+          <!-- Right Column: Sagarmoy -->
+          <div class="scroll-cascade flex flex-col items-center" style="transition-delay: 140ms;">
+            <div class="double-gold-frame w-60 sm:w-64">
+              <div class="double-gold-frame-inner bg-gradient-to-b from-[#faf4ea] to-[#efe3cf] flex flex-col pt-4 px-4 pb-0">
+                <div class="w-full aspect-[3/4] overflow-hidden">
+                  <img
+                    src="images/sagarmoy-potrait.jpeg"
+                    alt="Sagarmoy"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div class="py-3.5 flex items-center justify-center">
+                  <span class="font-display text-[10px] tracking-[0.26em] uppercase text-gold-deep/85 leading-none">
+                    Groom
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="font-script text-4xl sm:text-[44px] text-burgundy-rich mt-6 leading-tight">
+              Sagarmoy
+            </h4>
+            <p class="font-serif italic text-sm sm:text-base text-burgundy-ink/65 mt-1">
+              Son of
+            </p>
+            <p class="font-serif text-base sm:text-lg text-burgundy-ink/85">
+              Santi Ranjan Sarkar &amp; Jhunu Sarkar
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3: LOCATION / THE VENUE (#fdfaf5)
+         ====================================================================== -->
+    <section id="venue" class="bg-ivory-base px-5 py-20 sm:py-24">
+      <div class="max-w-2xl mx-auto text-center">
+        <!-- Section Header -->
+        <div class="scroll-cascade">
+          <p class="font-display text-[10px] sm:text-xs tracking-[0.3em] uppercase text-burgundy-rich/85">
+            Location
+          </p>
+          <!-- Gold Map-Pin Divider -->
+          <div class="flex items-center justify-center gap-3 my-4" aria-hidden="true">
+            <span class="h-px w-10 sm:w-14 bg-gradient-to-r from-transparent to-gold-antique/75"></span>
+            <svg class="w-4 h-4 text-gold-antique" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z" />
+              <circle cx="12" cy="11" r="2.2" />
+            </svg>
+            <span class="h-px w-10 sm:w-14 bg-gradient-to-l from-transparent to-gold-antique/75"></span>
+          </div>
+          <h3 class="font-serif text-3xl sm:text-4xl md:text-[42px] text-burgundy-rich font-normal tracking-wide mb-12">
+            The Venue
+          </h3>
+        </div>
+
+        <!-- Centered Framed Venue Card -->
+        <div
+          class="scroll-cascade bg-ivory-card border border-gold-hairline/90 rounded-[2px] p-2.5 sm:p-3.5 shadow-[0_12px_40px_rgba(74,14,23,0.045)]"
+        >
+          <div class="border border-gold-antique/25 px-6 py-10 sm:px-10 sm:py-12">
+            <!-- Cursive Venue Name -->
+            <h4 class="font-script text-4xl sm:text-[44px] text-burgundy-rich leading-snug mb-2">
+              Tarun Sangha, Baghajatin
+            </h4>
+
+            <!-- Street Address -->
+            <p class="font-serif text-base sm:text-lg text-burgundy-ink/75 mb-2 max-w-md mx-auto">
+              130-D, Block J, Bagha Jatin Pally, Baghajatin Colony, Kolkata, West Bengal 700032
+            </p>
+
+            <!-- Date & Time Reminder -->
+            <p class="font-display text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-gold-deep mb-8">
+              Sunday, December 6, 2026 &nbsp;&middot;&nbsp; 12:00 PM Onwards
+            </p>
+
+            <!-- Embedded Google Map for Tarun Sangha, Baghajatin -->
+            <div class="w-full overflow-hidden rounded-[4px] border border-gold-antique/50 shadow-inner mb-8 bg-ivory-band">
+              <iframe
+                title="Venue Map — Tarun Sangha, Baghajatin, Kolkata"
+                src="https://maps.google.com/maps?q=22.4844808,88.379785&amp;hl=en&amp;z=17&amp;output=embed"
+                class="w-full h-80 border-0"
+                style="border: 0;"
+                allowfullscreen=""
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            <!-- Primary Action Buttons: Get Directions & Save to Google Calendar -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+              <!-- Solid Burgundy Button: GET DIRECTIONS -->
+              <a
+                href="https://maps.app.goo.gl/Uwwf1keJx1b2TyJJA"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-[2px] bg-burgundy-royal text-ivory-base font-display text-[10.5px] tracking-[0.22em] uppercase hover:bg-burgundy-rich transition-colors shadow-sm"
+              >
+                <svg class="w-3.5 h-3.5 text-gold-warm" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 11l19-9-9 19-2-8-8-2z" />
+                </svg>
+                <span>Get Directions</span>
+              </a>
+
+              <!-- Gold-Bordered Button: SAVE TO GOOGLE CALENDAR (Direct Android/Web Redirect) -->
+              <a
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Antara+%26+Sagarmoy+%E2%80%94+Asirbad+%26+Engagement&amp;dates=20261206T063000Z/20261206T103000Z&amp;details=Request+the+pleasure+of+your+company+at+the+celebration+of+the+Asirbad+and+Engagement+of+Antara+and+Sagarmoy.+12%3A00+PM+Onwards.&amp;location=Tarun+Sangha%2C+Baghajatin%2C+130-D%2C+Block+J%2C+Bagha+Jatin+Pally%2C+Kolkata%2C+West+Bengal+700032"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-[2px] border border-gold-antique/75 text-burgundy-rich font-display text-[10.5px] tracking-[0.22em] uppercase hover:bg-gold-antique/10 transition-colors"
+              >
+                <svg class="w-3.5 h-3.5 text-gold-deep" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                  <rect x="3" y="5" width="18" height="16" rx="2" />
+                  <path stroke-linecap="round" d="M16 3v4M8 3v4M3 10h18" />
+                </svg>
+                <span>Save to Google Calendar</span>
+              </a>
+            </div>
+
+            <!-- Secondary Subtle Button: Apple / Outlook (.ics Download) -->
+            <div class="mt-4">
+              <button
+                id="add-to-calendar-btn"
+                type="button"
+                class="inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm font-serif italic text-burgundy-ink/70 hover:text-burgundy-rich underline underline-offset-4 decoration-gold-antique/60 transition-colors cursor-pointer"
+              >
+                <span>Apple / Outlook (.ics)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 4: SHARE YOUR PRECIOUS THOUGHTS (WARM BEIGE BAND #f6efe6)
+         ====================================================================== -->
+    <section id="blessings" class="bg-ivory-band px-5 py-20 sm:py-24 border-t border-gold-hairline/50">
+      <div class="max-w-xl mx-auto">
+        <!-- Section Header -->
+        <div class="scroll-cascade text-center mb-10">
+          <p class="font-display text-[10px] sm:text-xs tracking-[0.3em] uppercase text-burgundy-rich/85">
+            Blessings &amp; Wishes
+          </p>
+          <div class="flex items-center justify-center gap-3 my-4" aria-hidden="true">
+            <span class="h-px w-10 sm:w-14 bg-gradient-to-r from-transparent to-gold-antique/75"></span>
+            <span class="text-gold-antique text-sm leading-none">&#10022;</span>
+            <span class="h-px w-10 sm:w-14 bg-gradient-to-l from-transparent to-gold-antique/75"></span>
+          </div>
+          <h3 class="font-serif text-3xl sm:text-4xl md:text-[42px] text-burgundy-rich font-normal tracking-wide mb-3">
+            Share Your Precious Thoughts
+          </h3>
+          <p class="font-serif italic text-base sm:text-lg text-burgundy-ink/75 max-w-md mx-auto leading-relaxed">
+            Leave your heartfelt blessings, warm wishes, or a cherished memory for Antara &amp; Sagarmoy as they begin their forever.
+          </p>
+        </div>
+
+        <!-- Ivory Form Card with Gold Border -->
+        <div
+          class="scroll-cascade bg-ivory-card border border-gold-hairline/90 rounded-[2px] p-2.5 sm:p-3.5 shadow-[0_12px_40px_rgba(74,14,23,0.045)]"
+        >
+          <div class="border border-gold-antique/25 px-6 py-9 sm:px-10 sm:py-11">
+            <!-- Blessings Form -->
+            <form id="blessings-form" class="space-y-5" novalidate>
+              <div>
+                <label
+                  for="sender-name"
+                  class="block font-display text-[10px] tracking-[0.22em] uppercase text-burgundy-ink/85 mb-2"
+                >
+                  Your Name <span class="text-burgundy-rich">*</span>
+                </label>
+                <input
+                  id="sender-name"
+                  name="name"
+                  type="text"
+                  required
+                  placeholder="Enter your name"
+                  class="luxury-input w-full px-4 py-3 rounded-[2px] font-serif text-base text-burgundy-ink placeholder:text-burgundy-ink/35"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="sender-relation"
+                  class="block font-display text-[10px] tracking-[0.22em] uppercase text-burgundy-ink/85 mb-2"
+                >
+                  Relation / How You Know Us
+                  <span class="font-serif italic lowercase tracking-normal text-burgundy-ink/50">(optional)</span>
+                </label>
+                <input
+                  id="sender-relation"
+                  name="relation"
+                  type="text"
+                  placeholder="e.g., Family, Friend, Colleague"
+                  class="luxury-input w-full px-4 py-3 rounded-[2px] font-serif text-base text-burgundy-ink placeholder:text-burgundy-ink/35"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="sender-message"
+                  class="block font-display text-[10px] tracking-[0.22em] uppercase text-burgundy-ink/85 mb-2"
+                >
+                  Your Blessings &amp; Wishes <span class="text-burgundy-rich">*</span>
+                </label>
+                <textarea
+                  id="sender-message"
+                  name="message"
+                  rows="4"
+                  required
+                  placeholder="Write your heartfelt blessings or a special memory for Antara & Sagarmoy..."
+                  class="luxury-input w-full px-4 py-3 rounded-[2px] font-serif text-base text-burgundy-ink placeholder:text-burgundy-ink/35 resize-none"
+                ></textarea>
+              </div>
+
+              <!-- Inline Validation Message -->
+              <p id="blessings-error" class="hidden font-serif italic text-sm text-burgundy-rich text-center"></p>
+
+              <div class="pt-2">
+                <button
+                  id="blessings-submit-btn"
+                  type="submit"
+                  class="w-full py-3.5 px-6 rounded-[2px] bg-burgundy-royal text-ivory-base font-display text-[11px] tracking-[0.24em] uppercase hover:bg-burgundy-rich transition-colors shadow-sm disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  Send Your Blessings
+                </button>
+              </div>
+            </form>
+
+            <!-- In-Card Confirmation State -->
+            <div id="blessings-confirmation" class="hidden text-center py-6 space-y-4">
+              <div class="w-12 h-12 mx-auto rounded-full border border-gold-antique/60 flex items-center justify-center text-gold-antique">
+                <span class="text-lg">&#9829;</span>
+              </div>
+              <h4 class="font-script text-4xl sm:text-5xl text-burgundy-rich">
+                Thank you for your warm blessings!
+              </h4>
+              <p id="blessings-confirmation-detail" class="font-serif text-lg text-burgundy-ink/80 max-w-sm mx-auto leading-relaxed"></p>
+
+              <!-- Action buttons: Email App Fallback + Send Another Note -->
+              <div class="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a
+                  id="mailto-fallback-link"
+                  href="#"
+                  class="hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[2px] bg-burgundy-royal text-ivory-base font-display text-[10px] tracking-[0.2em] uppercase hover:bg-burgundy-rich transition-colors"
+                >
+                  <span>Open Email App</span>
+                </a>
+                <button
+                  id="send-another-btn"
+                  type="button"
+                  class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 rounded-[2px] border border-gold-antique/70 text-burgundy-rich font-display text-[10px] tracking-[0.2em] uppercase hover:bg-gold-antique/10 transition-colors"
+                >
+                  Send Another Note
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 5: FULL-WIDTH DEEP BURGUNDY FOOTER (#4a0e17)
+         ====================================================================== -->
+    <footer class="bg-burgundy-royal text-ivory-base px-6 py-16 sm:py-20 text-center">
+      <div class="scroll-cascade max-w-xl mx-auto flex flex-col items-center">
+        <!-- White Calligraphy -->
+        <p class="font-script text-5xl sm:text-6xl text-white tracking-wide mb-4">
+          Antara &amp; Sagarmoy
+        </p>
+
+        <!-- Soft Cream Gratitude Line -->
+        <p class="font-serif text-base sm:text-lg text-ivory-base/85 max-w-md leading-relaxed">
+          With love and gratitude, we thank you for being part of our journey.
+        </p>
+
+        <!-- Thin Gold Horizontal Line -->
+        <span class="block w-16 h-px bg-gold-antique/70 my-8" aria-hidden="true"></span>
+
+        <!-- Subtle Gold-Outlined Replay Invitation Button -->
+        <button
+          id="replay-btn"
+          type="button"
+          class="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-[2px] border border-gold-antique/60 text-gold-warm hover:bg-gold-antique/15 font-display text-[10px] tracking-[0.24em] uppercase transition-colors"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12a9 9 0 103-6.708L3 8m0-5v5h5" />
+          </svg>
+          <span>Replay Invitation</span>
+        </button>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Floating Toast Notification -->
+  <div
+    id="toast"
+    role="status"
+    aria-live="polite"
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[70] px-5 py-2.5 rounded-[2px] bg-burgundy-dark text-gold-warm border border-gold-antique/35 font-serif text-sm tracking-wide shadow-lg opacity-0 pointer-events-none transition-opacity duration-300"
+  >
+    Calendar invitation downloaded
+  </div>
+
+  <!-- ========================================================================
+       INTERACTIVE SCRIPT:
+       - Email delivery config (FormSubmit + mailto fallback)
+       - Wax-sealed envelope open & replay
+       - Downward cascade + IntersectionObserver scroll reveal
+       - .ics Calendar download
+       - Custom MP3 playback with Web Audio API harp/chime fallback
+       ======================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // ======================================================================
+      // CONFIGURATION: Replace with your real email address to receive blessings
+      // directly via FormSubmit.co (first submission sends a one-time activation
+      // email from FormSubmit to confirm your inbox).
+      // ======================================================================
+      const RECIPIENT_EMAIL = 'sagarmoy66@gmail.com';
+
+      // DOM References
+      const landingView = document.getElementById('landing-view');
+      const envelope = document.getElementById('envelope');
+      const invitationView = document.getElementById('invitation-view');
+      const cascadeItems = Array.from(document.querySelectorAll('[data-cascade-order]'));
+      const scrollCascadeItems = Array.from(document.querySelectorAll('.scroll-cascade'));
+      const replayBtn = document.getElementById('replay-btn');
+      const addToCalendarBtn = document.getElementById('add-to-calendar-btn');
+      const toast = document.getElementById('toast');
+
+      // Blessings Form DOM References
+      const blessingsForm = document.getElementById('blessings-form');
+      const blessingsError = document.getElementById('blessings-error');
+      const blessingsSubmitBtn = document.getElementById('blessings-submit-btn');
+      const blessingsConfirmation = document.getElementById('blessings-confirmation');
+      const blessingsConfirmationDetail = document.getElementById('blessings-confirmation-detail');
+      const mailtoFallbackLink = document.getElementById('mailto-fallback-link');
+      const sendAnotherBtn = document.getElementById('send-another-btn');
+
+      // Sound Toggle & Audio DOM References
+      const bgMusic = document.getElementById('bg-music');
+      const soundToggleBtn = document.getElementById('sound-toggle-btn');
+      const soundToggleLabel = document.getElementById('sound-toggle-label');
+
+      let isOpening = false;
+      let cascadeTimeouts = [];
+      let scrollObserver = null;
+
+      // ======================================================================
+      // 1. TOAST HELPER
+      // ======================================================================
+      function showToast(message) {
+        if (!toast) return;
+        toast.textContent = message;
+        toast.classList.remove('opacity-0');
+        toast.classList.add('opacity-100');
+        setTimeout(() => {
+          toast.classList.remove('opacity-100');
+          toast.classList.add('opacity-0');
+        }, 2800);
+      }
+
+      // ======================================================================
+      // 2. ENVELOPE OPENING, CASCADE TIMING & SCROLL REVEAL
+      // ======================================================================
+      function clearCascadeTimeouts() {
+        cascadeTimeouts.forEach((id) => clearTimeout(id));
+        cascadeTimeouts = [];
+      }
+
+      function triggerHeroCascade() {
+        clearCascadeTimeouts();
+        const sorted = cascadeItems
+          .slice()
+          .sort((a, b) => Number(a.dataset.cascadeOrder) - Number(b.dataset.cascadeOrder));
+
+        const baseDelay = 160;
+        const stepDelay = 235;
+
+        sorted.forEach((el, index) => {
+          const timeoutId = setTimeout(() => {
+            el.classList.add('cascade-in');
+          }, baseDelay + index * stepDelay);
+          cascadeTimeouts.push(timeoutId);
+        });
+      }
+
+      function initScrollObserver() {
+        if (scrollObserver) {
+          scrollObserver.disconnect();
+        }
+        if (!('IntersectionObserver' in window)) {
+          scrollCascadeItems.forEach((el) => el.classList.add('is-revealed'));
+          return;
+        }
+
+        scrollObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-revealed');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.14,
+            rootMargin: '0px 0px -36px 0px',
+          }
+        );
+
+        scrollCascadeItems.forEach((el) => scrollObserver.observe(el));
+      }
+
+      function openInvitation() {
+        if (isOpening) return;
+        isOpening = true;
+
+        // Start background music (custom MP3 with fade-in, or Web Audio fallback)
+        if (!isSoundPlaying && !userMutedManually) {
+          startAmbientSound();
+        }
+
+        envelope.classList.add('is-opening');
+        invitationView.classList.remove('hidden');
+        document.body.classList.add('invitation-open');
+        window.scrollTo({ top: 0, behavior: 'auto' });
+
+        const transitionTimer = setTimeout(() => {
+          landingView.classList.add('is-hidden');
+          void invitationView.offsetWidth;
+          invitationView.classList.add('is-visible');
+
+          triggerHeroCascade();
+          initScrollObserver();
+        }, 620);
+
+        cascadeTimeouts.push(transitionTimer);
+      }
+
+      function replayInvitation() {
+        clearCascadeTimeouts();
+        isOpening = false;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        envelope.classList.remove('is-opening');
+        landingView.classList.remove('is-hidden');
+        document.body.classList.remove('invitation-open');
+
+        setTimeout(() => {
+          invitationView.classList.remove('is-visible');
+          invitationView.classList.add('hidden');
+          cascadeItems.forEach((el) => el.classList.remove('cascade-in'));
+          scrollCascadeItems.forEach((el) => el.classList.remove('is-revealed'));
+        }, 700);
+      }
+
+      // ======================================================================
+      // 3. ADD TO CALENDAR (.ICS GENERATOR — APPLE / OUTLOOK)
+      // Sunday, December 6, 2026 · 12:00 PM – 4:00 PM IST (UTC+05:30)
+      // 12:00 PM IST = 06:30 UTC | 4:00 PM IST = 10:30 UTC
+      // ======================================================================
+      function downloadCalendarInvite() {
+        try {
+          const icsContent = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//Antara & Sagarmoy//Asirbad & Engagement//EN',
+            'CALSCALE:GREGORIAN',
+            'METHOD:PUBLISH',
+            'BEGIN:VEVENT',
+            'UID:antara-sagarmoy-asirbad-engagement-2026@celebration',
+            'DTSTAMP:20260101T000000Z',
+            'DTSTART:20261206T063000Z',
+            'DTEND:20261206T103000Z',
+            'SUMMARY:Antara & Sagarmoy — Asirbad & Engagement',
+            'DESCRIPTION:Request the pleasure of your company at the celebration of the Asirbad and Engagement of Antara and Sagarmoy. 12:00 PM Onwards.',
+            'LOCATION:Tarun Sangha\\, Baghajatin\\, 130-D\\, Block J\\, Bagha Jatin Pally\\, Baghajatin Colony\\, Kolkata\\, West Bengal 700032',
+            'END:VEVENT',
+            'END:VCALENDAR',
+          ].join('\r\n');
+
+          const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = 'Antara-and-Sagarmoy-Asirbad-Engagement.ics';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(url);
+
+          showToast('Saved to your calendar downloads');
+        } catch (err) {
+          console.error('Calendar download error:', err);
+          showToast('Unable to download calendar file');
+        }
+      }
+
+      // ======================================================================
+      // 4. SHARE YOUR PRECIOUS THOUGHTS — FORMSUBMIT AJAX + MAILTO FALLBACK
+      // ======================================================================
+      function buildMailtoUrl(name, relation, message) {
+        const subject = `Blessings for Antara & Sagarmoy — from ${name}`;
+        const lines = [
+          `From: ${name}`,
+          relation ? `Relation: ${relation}` : null,
+          '',
+          'Blessings & Wishes:',
+          message,
+        ].filter((line) => line !== null);
+
+        return `mailto:${encodeURIComponent(RECIPIENT_EMAIL)}?subject=${encodeURIComponent(
+          subject
+        )}&body=${encodeURIComponent(lines.join('\n'))}`;
+      }
+
+      async function handleBlessingsSubmit(event) {
+        event.preventDefault();
+
+        const nameInput = document.getElementById('sender-name');
+        const relationInput = document.getElementById('sender-relation');
+        const messageInput = document.getElementById('sender-message');
+
+        const name = nameInput.value.trim();
+        const relation = relationInput.value.trim();
+        const message = messageInput.value.trim();
+
+        if (!name || !message) {
+          blessingsError.textContent = 'Please enter your name and your blessings before sending.';
+          blessingsError.classList.remove('hidden');
+          return;
+        }
+
+        blessingsError.classList.add('hidden');
+        blessingsSubmitBtn.disabled = true;
+        blessingsSubmitBtn.textContent = 'Sending...';
+
+        const mailtoUrl = buildMailtoUrl(name, relation, message);
+        mailtoFallbackLink.href = mailtoUrl;
+
+        const isPlaceholderEmail =
+          !RECIPIENT_EMAIL || RECIPIENT_EMAIL.toLowerCase() === 'your_email@example.com';
+
+        if (isPlaceholderEmail) {
+          blessingsForm.classList.add('hidden');
+          blessingsConfirmationDetail.textContent = `Dear ${name}, your heartfelt note for Antara & Sagarmoy is ready to send.`;
+          mailtoFallbackLink.classList.remove('hidden');
+          blessingsConfirmation.classList.remove('hidden');
+          blessingsSubmitBtn.disabled = false;
+          blessingsSubmitBtn.textContent = 'Send Your Blessings';
+          return;
+        }
+
+        try {
+          const response = await fetch(
+            `https://formsubmit.co/ajax/${encodeURIComponent(RECIPIENT_EMAIL)}`,
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+              },
+              body: JSON.stringify({
+                _subject: `Blessings for Antara & Sagarmoy — from ${name}`,
+                name,
+                relation: relation || 'Guest',
+                message,
+              }),
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`FormSubmit returned status ${response.status}`);
+          }
+
+          blessingsForm.classList.add('hidden');
+          blessingsConfirmationDetail.textContent = `Dear ${name}, your loving wishes have been sent directly to Antara & Sagarmoy.`;
+          mailtoFallbackLink.classList.add('hidden');
+          blessingsConfirmation.classList.remove('hidden');
+          showToast('Your blessings have been sent');
+        } catch (err) {
+          console.error('Blessings delivery error:', err);
+          blessingsForm.classList.add('hidden');
+          blessingsConfirmationDetail.textContent = `Dear ${name}, we couldn't send directly right now—tap below to send your wishes via your email app.`;
+          mailtoFallbackLink.classList.remove('hidden');
+          blessingsConfirmation.classList.remove('hidden');
+        } finally {
+          blessingsSubmitBtn.disabled = false;
+          blessingsSubmitBtn.textContent = 'Send Your Blessings';
+        }
+      }
+
+      // ======================================================================
+      // 5. CUSTOM MP3 BACKGROUND MUSIC WITH SMOOTH FADE-IN + WEB AUDIO FALLBACK
+      // ======================================================================
+      let audioCtx = null;
+      let isSoundPlaying = false;
+      let userMutedManually = false;
+      let mp3Available = true;
+      let activeAudioMode = null; // 'mp3' | 'webaudio' | null
+      let fadeInterval = null;
+      let melodyTimer = null;
+      let noteIndex = 0;
+
+      // Mark custom MP3 unavailable if ./music.mp3 is missing or fails to load
+      if (bgMusic) {
+        bgMusic.addEventListener('error', () => {
+          mp3Available = false;
+          if (activeAudioMode === 'mp3' && isSoundPlaying) {
+            startWebAudioChime();
+          }
+        });
+      }
+
+      // Warm, serene pentatonic Indian-inspired harp arpeggio (D Major / Bhupali feel)
+      const melodyFrequencies = [
+        293.66, // D4
+        329.63, // E4
+        369.99, // F#4
+        440.00, // A4
+        493.88, // B4
+        587.33, // D5
+        493.88, // B4
+        440.00, // A4
+        369.99, // F#4
+        440.00, // A4
+        329.63, // E4
+        293.66, // D4
+      ];
+
+      function setSoundButtonState(playing) {
+        isSoundPlaying = playing;
+        if (playing) {
+          soundToggleBtn.classList.add('sound-playing');
+          soundToggleBtn.setAttribute('aria-pressed', 'true');
+          soundToggleLabel.textContent = 'Sound On';
+        } else {
+          soundToggleBtn.classList.remove('sound-playing');
+          soundToggleBtn.setAttribute('aria-pressed', 'false');
+          soundToggleLabel.textContent = 'Sound Off';
+        }
+      }
+
+      function clearFadeInterval() {
+        if (fadeInterval) {
+          clearInterval(fadeInterval);
+          fadeInterval = null;
+        }
+      }
+
+      function fadeInMp3(targetVolume = 0.7, durationMs = 1800) {
+        if (!bgMusic) return;
+        clearFadeInterval();
+        bgMusic.volume = 0;
+        const steps = 30;
+        const stepTime = durationMs / steps;
+        const volumeStep = targetVolume / steps;
+
+        fadeInterval = setInterval(() => {
+          if (!isSoundPlaying || activeAudioMode !== 'mp3') {
+            clearFadeInterval();
+            return;
+          }
+          const nextVol = Math.min(targetVolume, bgMusic.volume + volumeStep);
+          bgMusic.volume = nextVol;
+          if (nextVol >= targetVolume) {
+            clearFadeInterval();
+          }
+        }, stepTime);
+      }
+
+      function playGentleChime(freq) {
+        if (!audioCtx || audioCtx.state !== 'running') return;
+        const now = audioCtx.currentTime;
+
+        const osc = audioCtx.createOscillator();
+        const overtone = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+
+        overtone.type = 'triangle';
+        overtone.frequency.setValueAtTime(freq * 2, now);
+
+        const overtoneGain = audioCtx.createGain();
+        overtoneGain.gain.setValueAtTime(0.08, now);
+
+        // Soft plucked-harp envelope
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.exponentialRampToValueAtTime(0.065, now + 0.06);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 2.6);
+
+        osc.connect(gain);
+        overtone.connect(overtoneGain);
+        overtoneGain.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(now);
+        overtone.start(now);
+        osc.stop(now + 2.7);
+        overtone.stop(now + 2.7);
+      }
+
+      function startWebAudioChime() {
+        try {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (!AudioContextClass) {
+            showToast('Audio is not supported in this browser');
+            return;
+          }
+          if (!audioCtx) {
+            audioCtx = new AudioContextClass();
+          }
+          if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+          }
+
+          if (melodyTimer) {
+            clearInterval(melodyTimer);
+          }
+
+          activeAudioMode = 'webaudio';
+          setSoundButtonState(true);
+
+          playGentleChime(melodyFrequencies[noteIndex % melodyFrequencies.length]);
+          noteIndex++;
+
+          melodyTimer = setInterval(() => {
+            if (!isSoundPlaying || activeAudioMode !== 'webaudio') return;
+            playGentleChime(melodyFrequencies[noteIndex % melodyFrequencies.length]);
+            noteIndex++;
+          }, 1350);
+        } catch (err) {
+          console.error('Web Audio start error:', err);
+        }
+      }
+
+      function startAmbientSound() {
+        // Prefer custom ./music.mp3 if available; fall back seamlessly to Web Audio harp
+        if (bgMusic && mp3Available) {
+          activeAudioMode = 'mp3';
+          bgMusic.volume = 0;
+          const playPromise = bgMusic.play();
+
+          if (playPromise !== undefined) {
+            playPromise
+              .then(() => {
+                setSoundButtonState(true);
+                fadeInMp3(0.7, 1800);
+              })
+              .catch(() => {
+                // Missing file or unsupported audio format -> fall back to Web Audio chime
+                mp3Available = false;
+                startWebAudioChime();
+              });
+          } else {
+            setSoundButtonState(true);
+            fadeInMp3(0.7, 1800);
+          }
+          return;
+        }
+
+        startWebAudioChime();
+      }
+
+      function stopAmbientSound() {
+        clearFadeInterval();
+        if (bgMusic && !bgMusic.paused) {
+          bgMusic.pause();
+        }
+        if (melodyTimer) {
+          clearInterval(melodyTimer);
+          melodyTimer = null;
+        }
+        activeAudioMode = null;
+        setSoundButtonState(false);
+      }
+
+      function toggleSound(event) {
+        event.stopPropagation();
+        if (isSoundPlaying) {
+          userMutedManually = true;
+          stopAmbientSound();
+        } else {
+          userMutedManually = false;
+          startAmbientSound();
+        }
+      }
+
+      // ======================================================================
+      // EVENT LISTENERS
+      // ======================================================================
+      landingView.addEventListener('click', openInvitation);
+      landingView.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openInvitation();
+        }
+      });
+
+      soundToggleBtn.addEventListener('click', toggleSound);
+      replayBtn.addEventListener('click', replayInvitation);
+      addToCalendarBtn.addEventListener('click', downloadCalendarInvite);
+      blessingsForm.addEventListener('submit', handleBlessingsSubmit);
+
+      sendAnotherBtn.addEventListener('click', () => {
+        blessingsForm.reset();
+        blessingsConfirmation.classList.add('hidden');
+        blessingsForm.classList.remove('hidden');
+      });
+    })();
+  </script>
+</body>
+</html>
